@@ -1,0 +1,61 @@
+#image:
+#file: .gitpod.Dockerfile
+image: kavis131995/gitpod_mlmodel
+
+
+ports:
+- port: 8080
+  onOpen: open-preview
+- port: 8888
+  onOpen: open-browser
+  
+  
+
+tasks:
+- init: >
+    source activate py36 && pip install jupyterlab  &&
+    source activate py36 && pip install -r requirements.txt  &&
+    source activate py36 && pip install -r requirements_fake.txt  &&
+    source activate py36 && pip install -e .  --no-deps  &&
+    source activate py36 && pip install  ipykernel   
+
+
+
+
+
+#pyenv install 3.6.10  &&
+#pyenv local 3.6.10   &&  
+#python3 -m pip install numpy==1.17.5 &&
+#python3 -m pip install -r requirements.txt &&
+
+#    conda activate py36 && pip install -r requirements_fake.txt &&
+#    conda activate py36 && pip install -e . -r requirements.txt
+
+
+tasks:
+- init: >   
+    source activate py36 && pip install -r requirements.txt  &&
+    source activate py36 && pip install -r requirements_fake.txt  &&
+    source activate py36 && pip install -e .  --no-deps  &&
+    source activate py36 && pip install jupyterlab ipykernel    
+    
+    
+  command: >
+    source activate py36 && python -c "import mlmodels; print(mlmodels)"
+    
+    
+    
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    default: true
+    
+    # enable for all branches in this repo (defaults to false)
+    # branches: true
+    
+    # enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+
+
+
+
