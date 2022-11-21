@@ -1,6 +1,6 @@
 torch==1.2.0
 #torch==1.0.1
-tensorflow==1.15.2
+tensorflow==2.9.3
 keras<2.4.0
 numpy
 optuna<1.2.0
