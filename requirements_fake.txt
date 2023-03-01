@@ -22,7 +22,7 @@ tensorboardX
 
 
 ############################
-mxnet==1.6.0
+mxnet==1.9.1
 gluonts==0.4.2
 autogluon==0.0.5
 lightgbm==2.3.0
