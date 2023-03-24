@@ -1,6 +1,6 @@
 #### DL framework
 git+https://www.github.com/keras-team/keras-contrib.git
-mlflow==1.7.1
+mlflow==2.2.1
 
 
 ## Required for gluon_FB prophet
